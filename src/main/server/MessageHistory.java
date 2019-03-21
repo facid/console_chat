@@ -6,7 +6,7 @@ import java.util.LinkedList;
 class MessageHistory {
     private static final LinkedList<String> history = new LinkedList<>();
 
-    static void save(String message) {
+    void save(String message) {
         if (history.size() < 10) {
             history.add(message);
         } else {
@@ -15,8 +15,8 @@ class MessageHistory {
         }
     }
 
-    static void send(PrintWriter out) {
-        for (String message : history){
+    void send(PrintWriter out) {
+        for (String message : history) {
             out.println(message);
         }
     }
